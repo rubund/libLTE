@@ -1,0 +1,5 @@
+liblte (20150121git729519a-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Ruben Undheim <ruben.undheim@gmail.com>  Sat, 07 Feb 2015 00:27:57 +0100
