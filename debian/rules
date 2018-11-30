@@ -12,7 +12,19 @@ override_dh_shlibdeps:
 	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
 
 override_dh_auto_configure:
-	dh_auto_configure --buildsystem=cmake -- $(extraopts) $(CEPH_EXTRA_CMAKE_ARGS) -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	dh_auto_configure --buildsystem=cmake -- $(extraopts) $(CEPH_EXTRA_CMAKE_ARGS) -DRPATH=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
 override_dh_auto_test:
 	# skip executing tests
+
+override_dh_installman:
+	cd debian/man ; CHANGELOG_DATE="$(CHANGELOG_DATE)" ./genmanpages.sh
+	dh_installman -a
+
+override_dh_auto_clean:
+	dh_auto_clean
+	$(RM) debian/man/*.1
+
+# TODO: If compat level 9, use dh_installinit instead
+override_dh_installsystemd:
+	dh_installsystemd --no-enable --no-start
