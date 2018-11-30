@@ -27,6 +27,8 @@ Section: libdevel
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          srslte-core:any (= ${binary:Version})
+Breaks: srslte (<= 18.09-0ubuntu1)
+Replaces: srslte (<= 18.09-0ubuntu1)
 Description: Static libraries and headers for srslte
  This software allows you to run a full end-to-end, open-source LTE system.
  It contains a UE, eNB and EPC implementation.
@@ -54,8 +56,8 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          srslte-core (= ${binary:Version})
 Suggests: nextepc
-Breaks: srslte (<< 18.06.1-7)
-Replaces: srslte (<< 18.06.1-7)
+Breaks: srslte (<= 18.09-0ubuntu1)
+Replaces: srslte (<= 18.09-0ubuntu1)
 Description: Evolved Node B in LTE network for Software Defined Radios
  This software enables running a "base-station" for an LTE network.
  .
@@ -69,8 +71,8 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          srslte-core (= ${binary:Version})
-Breaks: srslte (<< 18.06.1-7)
-Replaces: srslte (<< 18.06.1-7)
+Breaks: srslte (<= 18.09-0ubuntu1)
+Replaces: srslte (<= 18.09-0ubuntu1)
 Description: User Equipment implementation for LTE
  This software enables using a software defined radio as the user equipment
  connecting to an LTE network.
@@ -86,8 +88,8 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          srslte-core (= ${binary:Version})
 Recommends: srsenb
-Breaks: srslte (<< 18.06.1-7)
-Replaces: srslte (<< 18.06.1-7)
+Breaks: srslte (<= 18.09-0ubuntu1)
+Replaces: srslte (<= 18.09-0ubuntu1)
 Description: Light-weight LTE core network implementation
  Together with 'srsenb', this software opens up the possibility to run an LTE
  network using a software defined radio.
@@ -99,8 +101,8 @@ Architecture: any
 Multi-Arch: allowed
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Breaks: srslte (<< 18.06.1-7)
-Replaces: srslte (<< 18.06.1-7)
+Breaks: srslte (<= 18.09-0ubuntu1)
+Replaces: srslte (<= 18.09-0ubuntu1)
 Description: Common files for srsLTE
  This software enables running a full end-to-end, open-source LTE system. It
  contains a UE, eNB and EPC implementation.
