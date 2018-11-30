@@ -3,7 +3,7 @@ Section: universe/misc
 Priority: optional
 Maintainer: Andre Puschmann <andre@softwareradiosystems.com>
 Build-Depends:
-    debhelper (>= 11),
+    debhelper (>= 9),
     dh-exec,
     cmake,
     build-essential,
