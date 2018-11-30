@@ -1,0 +1,51 @@
+From: Ruben Undheim <ruben.undheim@gmail.com>
+Date: Fri, 27 Jul 2018 13:25:31 +0000
+Subject: Set RPATH to /usr/lib/srslte
+
+---
+ srsenb/src/CMakeLists.txt | 2 +-
+ srsepc/src/CMakeLists.txt | 4 ++--
+ srsue/src/CMakeLists.txt  | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/srsenb/src/CMakeLists.txt b/srsenb/src/CMakeLists.txt
+index ef66c03..0d2cc8d 100644
+--- a/srsenb/src/CMakeLists.txt
++++ b/srsenb/src/CMakeLists.txt
+@@ -30,7 +30,7 @@ target_link_libraries(srsenb  srsenb_upper
+                               ${SCTP_LIBRARIES})
+ 
+ if (RPATH)
+-  set_target_properties(srsenb PROPERTIES INSTALL_RPATH ".")
++  set_target_properties(srsenb PROPERTIES INSTALL_RPATH "/usr/lib/srslte")
+ endif (RPATH)
+ 
+ install(TARGETS srsenb DESTINATION ${RUNTIME_DIR})
+diff --git a/srsepc/src/CMakeLists.txt b/srsepc/src/CMakeLists.txt
+index 9fb56ce..f16c2bf 100644
+--- a/srsepc/src/CMakeLists.txt
++++ b/srsepc/src/CMakeLists.txt
+@@ -56,8 +56,8 @@ target_link_libraries(srsmbms   srsepc_mbms_gw
+                                 ${LIBCONFIGPP_LIBRARIES}
+                                 ${SCTP_LIBRARIES})
+ if (RPATH)
+-  set_target_properties(srsepc PROPERTIES INSTALL_RPATH ".")
+-  set_target_properties(srsmbms PROPERTIES INSTALL_RPATH ".")
++  set_target_properties(srsepc PROPERTIES INSTALL_RPATH "/usr/lib/srslte")
++  set_target_properties(srsmbms PROPERTIES INSTALL_RPATH "/usr/lib/srslte")
+ endif (RPATH)
+ 
+ install(TARGETS srsepc DESTINATION ${RUNTIME_DIR})
+diff --git a/srsue/src/CMakeLists.txt b/srsue/src/CMakeLists.txt
+index 0755a64..f4eac8b 100644
+--- a/srsue/src/CMakeLists.txt
++++ b/srsue/src/CMakeLists.txt
+@@ -43,7 +43,7 @@ target_link_libraries(srsue   srsue_mac
+                               ${Boost_LIBRARIES})
+ 
+ if (RPATH)
+-  set_target_properties(srsue PROPERTIES INSTALL_RPATH ".")
++  set_target_properties(srsue PROPERTIES INSTALL_RPATH "/usr/lib/srslte")
+ endif (RPATH)
+ 
+ install(TARGETS srsue DESTINATION ${RUNTIME_DIR})
