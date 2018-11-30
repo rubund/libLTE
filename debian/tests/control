@@ -1,0 +1,2 @@
+Tests: srsenb-help, srsue-help, srsepc-help
+Depends: srslte
